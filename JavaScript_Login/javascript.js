@@ -5,10 +5,10 @@ function login(){
     let passwordU = document.getElementById('passwordU').value;/*'let' = declare variable (function scope)*/
     /*'var' = declare variable (block scope)*/
     /*g = global */
-    /*match() method matches a string against a regular expression(RegExp)*/
+    /*match() method matches a STRING against a regular expression(RegExp)*/
     var upper = passwordU.match(/[A-Z]/);/*RegExp */
     var lower = passwordU.match(/[a-z]/);/*RegExp */
-    var num = passwordU.match(/[1-9]/);/*RegExp */
+    var num = /[0-9]/g /*RegExp without match() method*/
     var symbol = passwordU.match(/[$-/:-?{-~!"^_`\[\]]/);/*RegExp */
     
     /*.length counts the number of characters in string and compare it*/      
@@ -42,7 +42,7 @@ function login(){
     }
 
     /*Number*/    
-    if (num){/* TRUE*/
+    if (passwordU != num){/* TRUE*/
         d = true;
     }    
     else{/* FALSE*/
