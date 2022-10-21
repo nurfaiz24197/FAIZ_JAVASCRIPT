@@ -62,7 +62,7 @@ function login(){
     if(a == true && b == true && c == true && d == true && e ==true){
         alert('Tahniah')
     }
-    else if(a == false && b == false && c == false && d == false && e ==false){
+    else (a != true && b != true && c != true && d != true && e !=true){
         /*pass block*/
     }
     else{
