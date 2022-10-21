@@ -5,11 +5,11 @@ function login(){
     let passwordU = document.getElementById('passwordU').value;/*'let' = declare variable (function scope)*/
     /*'var' = declare variable (block scope)*/
     /*g = global */
-    /*method match() will compare with value in variable 'passwordU'*/
+    /*match() method matches a string against a regular expression(RegExp)*/
     var upper = passwordU.match(/[A-Z]/);/*RegExp */
     var lower = passwordU.match(/[a-z]/);/*RegExp */
     var num = passwordU.match(/[1-9]/);/*RegExp */
-    var symbol = passwordU.match(/^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]+$/g);/*RegExp special character */
+    var symbol = passwordU.match(/[$-/:-?{-~!"^_`\[\]]/);/*RegExp */
     
     /*.length counts the number of characters in string and compare it*/      
     /* TRUE*/
@@ -22,7 +22,7 @@ function login(){
         alert ('harap maaf, kata laluan anda kurang daripada 12 huruf');
     }
 
-    /*match with variable 'upper'*/    
+    /*Uppercase*/    
     /* TRUE*/
     if (upper){
         b = true;
@@ -33,7 +33,7 @@ function login(){
         alert ('harap maaf, kata laluan anda tidak mengandungi huruf besar');
     }
 
-    /*match with variable 'lower'*/    
+    /*Lowercase*/     
     if (lower){/* TRUE*/
         c = true;
     }    
@@ -41,7 +41,7 @@ function login(){
         alert ('harap maaf, kata laluan anda tidak mengandungi huruf kecil');
     }
 
-    /*match with variable 'num'*/    
+    /*Number*/    
     if (num){/* TRUE*/
         d = true;
     }    
@@ -49,7 +49,7 @@ function login(){
         alert ('harap maaf, kata laluan anda tidak mengandungi huruf nombor');
     }
 
-    /*match with variable 'symbol'*/
+    /*Symbol*/  
     if (symbol){/* TRUE*/
         e = true;
     }    
@@ -62,7 +62,7 @@ function login(){
     if(a == true && b == true && c == true && d == true && e ==true){
         alert('Tahniah')
     }
-    else if(a != true && b != true && c != true && d != true && e !=true){
+    else if(a == false && b == false && c == false && d == false && e ==false){
         /*pass block*/
     }
     else{
